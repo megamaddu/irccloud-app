@@ -1,30 +1,49 @@
 {
-  "name": "purescript-electron-quickstart",
+  "name": "irccloud-app",
   "version": "1.0.0",
-  "description": "Quick start for a purely PureScript based Electron project",
+  "description": "Electron wrapper for irccloud.com",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "start": "pulp build --to index.js && electron index.js",
-    "test": "pulp test"
+    "test": "pulp test",
+    "postinstall": "bower install",
+    "clean": "rimraf dist bower_components output .pulp-cache",
+    "package:all": "npm-run-all package:darwin package:linux package:win32",
+    "package:darwin": "npm-run-all package:darwin:build package:darwin:compress",
+    "package:linux": "npm-run-all package:linux:build package:linux:compress",
+    "package:win32": "npm-run-all package:win32:build package:win32:compress",
+    "package:darwin:build": "electron-packager ./ IRCCloud --platform darwin --arch x64 --out ./dist/IRCCloud --version 0.36.4 --overwrite --icon=./assets/irccloud.icns",
+    "package:linux:build": "electron-packager ./ IRCCloud --platform linux --arch x64 --out ./dist/IRCCloud --version 0.36.4 --overwrite --icon=./assets/irccloud.icns",
+    "package:win32:build": "electron-packager ./ IRCCloud --platform win32 --arch x64 --out ./dist/IRCCloud --version 0.36.4 --overwrite --icon=./assets/irccloud.icns",
+    "package:darwin:compress": "tar -cvzf dist/irccloud-darwin-x64.tar.gz dist/IRCCloud/IRCCloud-darwin-x64",
+    "package:linux:compress": "tar -cvzf dist/irccloud-linux-x64.tar.gz dist/IRCCloud/IRCCloud-linux-x64",
+    "package:win32:compress": "zip dist/irccloud-win32-x64.zip dist/IRCCloud/IRCCloud-win32-x64"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bamboo/purescript-electron-quickstart.git"
+    "url": "git+https://github.com/spicydonuts/irccloud-app.git"
   },
   "keywords": [
     "purescript",
-    "electron"
+    "electron",
+    "irc",
+    "irccloud"
   ],
-  "author": "Rodrigo B. de Oliveira <rbo@acm.org>",
+  "author": "Michael Trotter <spicydonuts@gmail.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/bamboo/purescript-electron-quickstart/issues"
+    "url": "https://github.com/spicydonuts/irccloud-app/issues"
   },
-  "homepage": "https://github.com/bamboo/purescript-electron-quickstart#readme",
+  "homepage": "https://github.com/spicydonuts/irccloud-app#readme",
   "devDependencies": {
-    "electron-prebuilt": "^0.36.3"
+    "bower": "^1.7.7",
+    "electron-packager": "^5.2.1",
+    "electron-prebuilt": "^0.36.3",
+    "npm-run-all": "^1.5.1",
+    "pulp": "^8.0.0",
+    "purescript": "^0.8.0"
   }
 }

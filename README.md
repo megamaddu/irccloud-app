@@ -1,14 +1,17 @@
-# purescript-electron-quickstart
+# irccloud-app
 
-Quick start for a purely PureScript based Electron project.
+Electron wrapper for irccloud.com
 
-## Running
+## Development
 
 Install the required dependencies:
 
-    pulp dep install
     npm install
 
 Run:
 
     npm start
+
+## Acknowledgements
+
+Based on [Electron](https://github.com/atom/electron) and the [purescript-electron-quickstart](https://github.com/bamboo/purescript-electron-quickstart) projects.
