@@ -41,7 +41,7 @@
   "devDependencies": {
     "bower": "^1.7.7",
     "electron-packager": "^5.2.1",
-    "electron-prebuilt": "^0.36.3",
+    "electron-prebuilt": "^0.36.4",
     "npm-run-all": "^1.5.1",
     "pulp": "^8.0.0",
     "purescript": "^0.8.0"

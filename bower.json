@@ -12,7 +12,8 @@
   ],
   "dependencies": {
     "purescript-console": "^0.1.0",
-    "purescript-electron": "spicydonuts/purescript-electron#master"
+    "purescript-electron": "spicydonuts/purescript-electron#master",
+    "purescript-tailrec": "^0.3.1"
   },
   "resolutions": {
     "purescript-electron": "master"

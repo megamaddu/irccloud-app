@@ -3,6 +3,7 @@ module Main where
 import Prelude
 import Control.Monad.Eff (Eff)
 import Control.Monad.Eff.Console (CONSOLE, log)
+-- import Control.Monad.
 import Electron (ELECTRON)
 import Electron.App (Path(Home), quit, onReady, getPath, getAppPath)
 import Electron.BrowserWindow (BrowserWindowOption(WebPreferences, Height, Width), WebPreference(ZoomFactor, OverlayScrollbars), onNewWindow, webContents, loadURL, onClose, newBrowserWindow)
